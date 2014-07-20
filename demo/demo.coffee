@@ -7,6 +7,10 @@ if Meteor.isClient
 
       num = t.find("input[type=number]").valueAsNumber
       Stuff.insert(num: num)
+
+    "click .insert-random": ->
+      Stuff.insert(num: Math.floor(Math.random() * 1000))
+
     "click .delete": (e, t) ->
       Stuff.remove(this._id)
 

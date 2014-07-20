@@ -3,10 +3,17 @@
 </head>
 
 <body>
+    {{> forkme}}
     <div class="container">
     {{> list}}
     </div>
 </body>
+
+<template name="forkme">
+    <a href="https://github.com/mizzao/meteor-animated-each" target="_blank">
+        <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+</template>
 
 <template name="list">
   <h3>This is a scrolling container with animations, sorted by number.</h3>
@@ -24,11 +31,22 @@
       </div>
   </div>
 
-  <br>
-  <form class="form-inline">
-      <label>Insert item with number:</label>
-      <input class="form-control" type="number">
-  </form>
+  <h3>Add more items:</h3>
+  <div class="row">
+      <div class="col-sm-6">
+          <form class="form-inline">
+              <label>Insert single item with number:</label>
+              <input class="form-control" type="number">
+          </form>
+      </div>
+      <div class="col-sm-6">
+          or
+          <button class="btn btn-primary insert-random">
+              Insert a randomly numbered item
+          </button>
+          between 0 to 1000
+      </div>
+  </div>
 </template>
 
 <template name="item">
