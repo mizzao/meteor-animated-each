@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "animated-each": {
+      "path": ".."
+    },
+    "bootstrap-3": {},
+    "jqueryui": {}
+  }
+}

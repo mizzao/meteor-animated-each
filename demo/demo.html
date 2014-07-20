@@ -1,0 +1,42 @@
+<head>
+  <title>demo</title>
+</head>
+
+<body>
+    <div class="container">
+    {{> list}}
+    </div>
+</body>
+
+<template name="list">
+  <h3>This is a scrolling container with animations, sorted by number.</h3>
+  <ul>
+      <li>The items currently in view are maintained as other items are added and removed, by adjusting the scroll position.</li>
+      <li>Items fade in and out to provide visual cues for changes.</li>
+      <li>Open another browser window to test the effects of simultaneous edits.</li>
+  </ul>
+
+  <div class="scroller">
+      <div class="each-parent">
+          {{#each stuff}}
+          {{> item}}
+          {{/each}}
+      </div>
+  </div>
+
+  <br>
+  <form class="form-inline">
+      <label>Insert item with number:</label>
+      <input class="form-control" type="number">
+  </form>
+</template>
+
+<template name="item">
+    <div class="item well">
+        <h3>Number: {{num}}
+        <button class="btn btn-danger pull-right delete">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        </h3>
+    </div>
+</template>
