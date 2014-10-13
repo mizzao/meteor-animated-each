@@ -34,7 +34,7 @@ You can activate the animations with the following:
 
 ```
 Template.foo.rendered = function() {
-    AnimateEach.attachHooks( this.find(".bar") );
+    AnimatedEach.attachHooks( this.find(".bar") );
 };
 ```
 
