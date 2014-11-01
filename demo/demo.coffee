@@ -14,8 +14,8 @@ if Meteor.isClient
     "click .delete": (e, t) ->
       Stuff.remove(this._id)
 
-  Template.list.stuff = ->
-    Stuff.find({}, sort: {num: 1})
+  Template.list.helpers
+    stuff: -> Stuff.find({}, sort: {num: 1})
 
   Template.list.rendered = ->
     AnimatedEach.attachHooks(this.find(".each-parent"))

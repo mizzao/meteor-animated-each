@@ -6,7 +6,7 @@
 standard-app-packages
 autopublish
 insecure
-bootstrap-3
 coffeescript
-animated-each
-jqueryui
+mizzao:bootstrap-3
+mizzao:animated-each
+mizzao:jquery-ui

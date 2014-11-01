@@ -8,12 +8,14 @@ This Meteor package makes it easier for many users to interact with highly dynam
 
 These features are easily explained with the demo at http://animated-each.meteor.com. (See the [source](demo)). Play with the demo in multiple browsers to see how it works.
 
+The package uses CSS transitions for better performance than jQuery's standard animations.
+
 ## Usage
 
 Install the package:
 
 ```
-mrt add animated-each
+meteor add mizzao:animated-each
 ```
 
 #### `AnimatedEach.attachHooks(container, scrollParent)`

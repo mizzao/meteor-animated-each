@@ -15,9 +15,11 @@ class AnimatedEach
     container._uihooks =
       insertElement: (node, next) ->
         # Make the node invisible before fading in
-        $(node).css("display", "none")
+        $(node).css("opacity", 0)
         container.insertBefore(node, next)
-        $(node).fadeIn("slow")
+
+        $(node).transition {opacity: 1}, "slow", "in", ->
+          $(this).css("opacity", "")
 
         $sp = _getScrollParent(scrollParent, node)
         spOffset = $sp.offset()
@@ -52,7 +54,7 @@ class AnimatedEach
 
         # Fade out the node, and when completed remove it and adjust the
         # scroll height
-        $(node).fadeOut "slow", ->
+        $(node).transition {opacity: 0}, "slow", "out", ->
           $(this).remove() # equiv to parent.removeChild(node) or $node.remove()
 
           # Adjust scroll position around the removed element, if it was above
